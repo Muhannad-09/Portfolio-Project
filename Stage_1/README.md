@@ -1,4 +1,4 @@
-# Stage 1 Team Formation and Idea Development
+# Stage 1 – Team Formation and Idea Development
 
 This folder contains the deliverables for **Stage 1** of the BookBridge Portfolio Project.
 
@@ -12,7 +12,7 @@ This folder contains the deliverables for **Stage 1** of the BookBridge Portfoli
 
 ## Deliverables
 
-- `Stage_1_Report.md` must include:
+- `Stage_1_Report.md` – must include:
   1. **Team Formation Overview**: team members, roles, collaboration strategy
   2. **Ideas Explored**: description, strengths, weaknesses, reasons for rejection
   3. **Selected MVP Concept**: summary, reasons for selection, challenges, opportunities
