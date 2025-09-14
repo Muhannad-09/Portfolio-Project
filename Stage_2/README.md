@@ -1,75 +1,74 @@
-Stage 2 – Project Charter Development
-Overview
+# Stage 2 – Project Charter Development Overview
 
-This stage focuses on creating the Project Charter for the Portfolio Project (BookBridge). The charter serves as a foundation for all subsequent stages by defining the project’s purpose, objectives, scope, stakeholders, risks, and high-level plan.
+This document represents the **Project Charter** for the BookBridge application,  
+developed as part of the **Holberton School Portfolio Project**.  
 
-Project Objectives
+The Project Charter defines the **purpose, objectives, scope, stakeholders, risks, and high-level plan**.  
+It serves as the foundation for all subsequent stages of the project.
 
-Purpose
-The purpose of BookBridge is to provide a centralized platform where students and general readers can easily search for books and book-related websites. This addresses the challenge of scattered resources by creating a simple, beginner-friendly interface.
+---
 
-SMART Objectives
+## Project Objectives
 
-Develop a searchable catalog (title, author, category).
+**Purpose**  
+The purpose of BookBridge is to provide a simple, centralized platform where users can **search for books**  
+and **access online resources** in one place.
 
-Implement book detail pages with descriptions and resource links.
+**SMART Objectives**  
+1. Deliver an intuitive platform that allows users to search books by title, author, and category.  
+2. Provide links to trusted book websites and open resources.  
+3. Implement a basic account system for users to save favorite books.  
 
-Deliver an MVP with account functionality for saving favorites.
+---
 
-Stakeholders and Roles
+## Stakeholders and Roles
 
-Internal Team Members
+**Internal Stakeholders**  
+- **Team Members**  
+  - Muhannad Gsgs – Project Manager  
+  - Abdullatif Alzaher – Backend Developer  
+  - Mohammed Alzahrani – Frontend Developer  
+  - Abdulaziz Jumaiah – Documentation & Support  
 
-Muhannad Gsgs – Project Manager (temporary)
+**External Stakeholders**  
+- **Holberton School Instructors** – Provide guidance and feedback.  
+- **End Users (Students & Readers)** – Primary users who will benefit from the MVP.  
 
-Abdullatif Alzaher – Technical Lead
+---
 
-Mohammed Alzahrani – Research Lead
+## Project Scope
 
-Abdulaziz Jumaiah – Documentation Lead
+**In-Scope**  
+- Book search functionality (title, author, category).  
+- Access to external book resources.  
+- Book details page with description and links.  
+- Optional account system to save favorites.  
 
-External Stakeholders
+**Out-of-Scope**  
+- Advanced recommendation engine.  
+- Payment systems or e-commerce features.  
+- Full-scale social features (chat, forums, etc.).  
 
-Holberton School instructors/mentors
+---
 
-End users (students and general readers)
+## Risks and Mitigation
 
-Scope
+| Risk | Mitigation |
+|------|-------------|
+| Limited experience with required tools | Schedule learning sessions and tutorials. |
+| Time constraints and deadlines | Break tasks into smaller deliverables; track weekly progress. |
+| Scaling complexity of features | Focus on MVP essentials only; defer advanced features. |
 
-In-Scope
+---
 
-Search functionality (title, author, category).
+## High-Level Plan
 
-Book details page with metadata and links.
+- **Stage 1:** Idea Development and Team Formation ✅  
+- **Stage 2:** Project Charter Development ✅  
+- **Stage 3:** Technical Documentation (Week 5–6)  
+- **Stage 4:** MVP Development (Week 7–10)  
+- **Stage 5:** Project Closure and Final Presentation (Week 11–12)  
 
-Simple account system for saving favorites.
+---
 
-Beginner-friendly user interface.
-
-Out-of-Scope
-
-Advanced recommendation engine.
-
-Paid book purchasing/e-commerce features.
-
-Proprietary API integrations.
-
-Risks
-Risk	Mitigation Strategy
-Technical learning curve	Schedule tutorials and team practice early.
-Time management issues	Weekly check-ins and milestone tracking.
-Scope creep	Limit development to MVP; extras marked as “future work.”
-UI/UX challenges	Start with wireframes; get early peer feedback.
-High-Level Plan
-
-Stage 1 (Weeks 1–2): Team formation & idea development ✅
-
-Stage 2 (Weeks 3–4): Project Charter creation (current).
-
-Stage 3 (Weeks 5–6): Technical documentation & architecture design.
-
-Stage 4 (Weeks 7–10): MVP development.
-
-Stage 5 (Weeks 11–12): Testing, final presentation, and closure.
-
-📌 Deliverable: This Project Charter establishes the foundation for all upcoming work on BookBridge
+✅ With this Project Charter, the team has a clear foundation for moving into the next stages of development.
