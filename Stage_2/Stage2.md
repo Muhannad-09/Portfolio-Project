@@ -111,4 +111,3 @@ By the end of Stage 2, BookBridge has a clear Project Charter defining:
 - High-level timeline for implementation  
 
 This document sets a strong foundation for the actual development in **Stage 4 – MVP Development**.
-
