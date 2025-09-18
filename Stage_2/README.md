@@ -63,11 +63,11 @@ and **access online resources** in one place.
 
 ## High-Level Plan
 
-- **Stage 1:** Idea Development and Team Formation ✅  
-- **Stage 2:** Project Charter Development ✅  
-- **Stage 3:** Technical Documentation (Week 5–6)  
-- **Stage 4:** MVP Development (Week 7–10)  
-- **Stage 5:** Project Closure and Final Presentation (Week 11–12)  
+- **Stage 1:** Idea Development and Team Formation (Week 1) ✅  
+- **Stage 2:** Project Charter Development (Week 2) ✅  
+- **Stage 3:** Technical Documentation (Weeks 3–4)  
+- **Stage 4:** MVP Development (Weeks 5–8)  
+- **Stage 5:** Project Closure and Final Presentation (Weeks 9–10)  
 
 ---
 
