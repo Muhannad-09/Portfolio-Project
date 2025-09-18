@@ -59,11 +59,11 @@ BookBridge is a web application that centralizes book resources, helping users d
 ## 5. High-Level Plan
 | Week | Phase / Milestone |
 |------|-----------------|
-| Week 1 | Stage 2: Project Charter creation, team alignment |
-| Week 2–3 | Backend API and database setup |
-| Week 3–4 | Frontend development (search, book details, user accounts) |
-| Week 5 | Integration, testing, and documentation |
-| Week 6 | Final polish, presentation, and submission |
+| Week 1 | Stage 1: Idea Development and Team Formation ✅ |
+| Week 2 | Stage 2: Project Charter Development ✅ |
+| Week 3–4 | Stage 3: Technical Documentation |
+| Week 5–8 | Stage 4: MVP Development |
+| Week 9–10 | Stage 5: Project Closure and Final Presentation |
 
 ---
 
@@ -111,3 +111,4 @@ By the end of Stage 2, BookBridge has a clear Project Charter defining:
 - High-level timeline for implementation  
 
 This document sets a strong foundation for the actual development in **Stage 4 – MVP Development**.
+
