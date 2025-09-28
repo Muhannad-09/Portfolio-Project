@@ -28,9 +28,3 @@ For detailed system architecture, user stories, mockups, database schema, API sp
 - PostgreSQL  
 - Git  
 
-### Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/YourUsername/Portfolio-Project.git
-cd Portfolio-Project
-
