@@ -1,5 +1,3 @@
-<img width="2560" height="3252" alt="screen" src="https://github.com/user-attachments/assets/dd07f1e8-04c5-4651-a904-5ac41948c141" /># Stage 3: Technical Documentation
-
 ## 1. User Stories & Mockups
 
 ### User Stories (prioritized with MoSCoW)
