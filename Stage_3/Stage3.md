@@ -80,7 +80,6 @@ graph TD
 
 ### 2.2 Database Schema (ERD)
 ```
-erDiagram
   USER ||--o{ FAVORITE : has
   USER {
     int id PK
@@ -107,7 +106,7 @@ erDiagram
 ## 📝 Task 3: Sequence Diagrams
 
 ### 3.1 Example: User Searches for a Book
-```mermaid
+```
 sequenceDiagram
   User->>Frontend: Enter search query
   Frontend->>API: GET /api/v1/books?query=title
@@ -124,7 +123,8 @@ sequenceDiagram
   DB-->>API: success
   API-->>Frontend: {status: success}
   Frontend-->>User: Show confirmation
-``
+```
+```
 
 ### 📝 Task 4: API Specifications
 
