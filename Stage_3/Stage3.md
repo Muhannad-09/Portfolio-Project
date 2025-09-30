@@ -58,28 +58,33 @@ graph TD
   API --> BL[Business Logic Layer]
   BL --> DB[(Database: PostgreSQL)]
   API --> Ext[External Services: Book APIs, Email API]
+📝 Task 2: Components, Classes, and Database Design
+2.1 Components / Services
+👤 UserService
 
-## 📝 Task 2: Components, Classes, and Database Design
+create_user(data)
 
-### 2.1 Components / Services
+authenticate_user(email, password)
 
-#### **UserService**
-- `create_user(data)`  
-- `authenticate_user(email, password)`  
-- `get_user_favorites(user_id)`  
+get_user_favorites(user_id)
 
-#### **BookService**
-- `search_books(query, filters)`  
-- `get_book_details(book_id)`  
-- `link_external_resources(book_id)`  
+📚 BookService
 
-#### **FavoriteService**
-- `add_to_favorites(user_id, book_id)`  
-- `remove_from_favorites(user_id, book_id)`  
-- `list_favorites(user_id)`  
+search_books(query, filters)
 
-### 2.2 Database Schema (ERD)
-```mermaid
+get_book_details(book_id)
+
+link_external_resources(book_id)
+
+⭐ FavoriteService
+
+add_to_favorites(user_id, book_id)
+
+remove_from_favorites(user_id, book_id)
+
+list_favorites(user_id)
+
+2.2 Database Schema (ERD)
 erDiagram
   USER ||--o{ FAVORITE : has
   USER {
@@ -104,10 +109,8 @@ erDiagram
     datetime created_at
   }
 
-## 📝 Task 3: Sequence Diagrams
-
-### 3.1 Example: User Searches for a Book
-```mermaid
+📝 Task 3: Sequence Diagrams
+🔍 User searches for a book
 sequenceDiagram
   User->>Frontend: Enter search query
   Frontend->>API: GET /api/v1/books?query=title
@@ -116,92 +119,91 @@ sequenceDiagram
   API-->>Frontend: JSON {books[]}
   Frontend-->>User: Display results
 
-## 📝 Task 4: API Specifications
+⭐ User adds book to favorites
+sequenceDiagram
+  User->>Frontend: Click "Add to Favorites"
+  Frontend->>API: POST /api/v1/favorites
+  API->>DB: INSERT INTO favorites
+  DB-->>API: success
+  API-->>Frontend: {status: success}
+  Frontend-->>User: Show confirmation
 
-### 4.1 Authentication
+📝 Task 4: API Specifications
+🔐 Authentication
 
-**POST /api/v1/auth/login**  
-- **Input:**  
-```json
-{
-  "email": "user@example.com",
-  "password": "secret"
-}
-Output:
+POST /api/v1/auth/login
+Input: { "email": "user@example.com", "password": "secret" }
+Output: { "token": "jwt_token" }
 
-{
-  "token": "jwt_token"
-}
-
-4.2 Books
+📚 Books
 
 GET /api/v1/books?query=keyword → Search books
 
 GET /api/v1/books/{id} → Get book details
 
-4.3 Favorites
+⭐ Favorites
 
 POST /api/v1/favorites
-
-Input:
-
-{
-  "book_id": 1
-}
-
-
-Output:
-
-{
-  "status": "success"
-}
-
+Input: { "book_id": 1 }
+Output: { "status": "success" }
 
 GET /api/v1/favorites → List user’s favorites
 
 DELETE /api/v1/favorites/{id} → Remove from favorites
 
+📝 Task 5: SCM & QA Strategies
+🗂 Source Control (SCM)
 
----
+Platform: GitHub
 
-```markdown
-## 📝 Task 5: SCM & QA Strategies
+Branching Strategy:
 
-### 5.1 Source Control (SCM)
+main → stable branch
 
-- **Platform:** GitHub  
-- **Branching Strategy:**  
-  - `main` → stable branch  
-  - `dev` → integration  
-  - `feature/*` → per feature  
-- **Workflow:** Pull Requests with code reviews, no direct pushes to `main`
+dev → integration
 
-### 5.2 Quality Assurance (QA)
+feature/* → per feature
 
-- **Unit Tests:** Pytest for backend logic  
-- **Integration Tests:** API endpoints with Postman  
-- **Frontend Tests:** React Testing Library  
-- **Static Analysis:** Flake8 (Python), ESLint (JS)  
-- **CI/CD:** GitHub Actions (lint + tests on PR)
+Workflow: Pull Requests with code reviews, no direct pushes to main
 
-## 📝 Task 6: Technical Justifications
+🧪 Quality Assurance (QA)
 
-- **Flask:** Lightweight, easy for rapid API development  
-- **PostgreSQL:** Relational, scalable for production  
-- **JWT Authentication:** Secure and stateless  
-- **React:** Flexible and responsive frontend  
-- **GitHub Actions:** Automated QA and CI/CD pipeline
+Unit Tests: Pytest for backend logic
 
-## 📦 Final Deliverable
+Integration Tests: API endpoints with Postman
+
+Frontend Tests: React Testing Library
+
+Static Analysis: Flake8 (Python), ESLint (JS)
+
+CI/CD: GitHub Actions (lint + tests on PR)
+
+📝 Task 6: Technical Justifications
+
+Flask: Lightweight, easy for rapid API development
+
+PostgreSQL: Relational, scalable for production
+
+JWT Authentication: Secure and stateless
+
+React: Flexible and responsive frontend
+
+GitHub Actions: Automated QA and CI/CD pipeline
+
+📦 Final Deliverable
 
 This Stage 3 document consolidates:
 
-- Task 0: User Stories & Mockups  
-- Task 1: System Architecture  
-- Task 2: Components, Classes, Database Design  
-- Task 3: Sequence Diagrams  
-- Task 4: API Specifications  
-- Task 5: SCM & QA Strategies  
-- Task 6: Technical Justifications  
+Task 0: User Stories & Mockups
 
-It provides a blueprint for MVP development and aligns the team on BookBridge’s technical direction.
+Task 1: System Architecture
+
+Task 2: Components, Classes, Database Design
+
+Task 3: Sequence Diagrams
+
+Task 4: API Specifications
+
+Task 5: SCM & QA Strategies
+
+Task 6: Technical Justifications
