@@ -1,183 +1,207 @@
-## 📄 Stage 3 – Technical Documentation
+# 📄 Stage 3 – Technical Documentation (BookBridge)
 
-## 1. User Stories & Mockups
-
-### User Stories (prioritized with MoSCoW)
-
-**Must Have**
-
-* As a visitor, I want to view a list of projects, so that I can understand the developer’s experience.
-* As an admin, I want to log in securely, so that I can manage portfolio content.
-* As an admin, I want to add, edit, and delete projects, so that my portfolio stays updated.
-
-**Should Have**
-
-* As a visitor, I want to filter projects by category, so that I can quickly find relevant work.
-* As a visitor, I want to send a message through a contact form, so that I can reach the developer easily.
-
-**Could Have**
-
-* As a visitor, I want to download the developer’s CV, so that I can review it offline.
-
-**Won’t Have**
-
-* As a visitor, I want to create my own account on the portfolio site. (Not in MVP scope)
-
-### Mockups
-
-- ### BookBridge Home Page
-<img width="2560" height="3252" alt="screen" src="https://github.com/user-attachments/assets/571c4e41-76ee-478a-9505-b67dcc2a4ed7" />
- 
-- ### Admin dashboard
-<img width="2560" height="1600" alt="screen" src="https://github.com/user-attachments/assets/85f87728-3459-44d9-88a7-bf5d554adf83" />
-
+This document consolidates all deliverables for Stage 3 of the **BookBridge Project**.  
+It defines **user stories, mockups, architecture, database schema, sequence diagrams, API endpoints, and SCM/QA strategies**.  
 
 ---
-## 2. System Architecture
 
+## 📝 Task 0: Define User Stories and Mockups
+
+### User Stories (MoSCoW Prioritization)
+
+#### ✅ Must Have
+- As a user, I want to search books by title, author, or category, so that I can quickly find the book I need.  
+- As a user, I want to view book details (author, description, external links), so that I can learn more about each book.  
+- As a user, I want to save favorite books, so that I can access them later in my account.  
+
+#### 👍 Should Have
+- As a user, I want the platform to link to trusted book resources, so that I can explore external information.  
+- As a user, I want a responsive interface, so that I can access it on desktop and mobile.  
+
+#### 💡 Could Have
+- As a user, I want to sort and filter search results, so that I can refine what I’m looking for.  
+- As a user, I want to see recommendations based on my favorites.  
+
+#### 🚫 Won’t Have (MVP)
+- Purchase books directly through the platform.  
+- Social features (reviews, comments, discussions).  
+- AI-based recommendations.  
+
+---
+
+### 📐 Mockups
+
+**BookBridge Home Page**  
+<img src="https://github.com/user-attachments/assets/571c4e41-76ee-478a-9505-b67dcc2a4ed7" alt="BookBridge Home Page" width="800">  
+
+**Admin Dashboard**  
+<img src="https://github.com/user-attachments/assets/85f87728-3459-44d9-88a7-bf5d554adf83" alt="Admin Dashboard" width="800">  
+
+---
+
+## 📝 Task 1: System Architecture
+
+### High-Level Components
+- **Frontend**: React web interface  
+- **Backend**: Python + Flask (REST API)  
+- **Database**: SQLite (development) → PostgreSQL (production)  
+- **External APIs**: Optional for book metadata enrichment  
+
+### Data Flow
+User → Frontend → Backend API → Database / External APIs → Response → User  
+
+### Architecture Diagram
 ```mermaid
 graph TD
-  User[Visitor/Admin] -->|Browser| Frontend[Frontend (HTML/CSS/JS)]
+  User[User] -->|Browser| Frontend[Frontend (React)]
   Frontend --> API[Backend API (Flask)]
   API --> BL[Business Logic Layer]
   BL --> DB[(Database: PostgreSQL)]
-  API --> Ext[External Service: Email API]
-```
+  API --> Ext[External Services: Book APIs, Email API]
 
----
+## 📝 Task 2: Components, Classes, and Database Design
 
-## 3. Components, Classes, and Database Design
+### 2.1 Components / Services
 
-### Components
+#### **UserService**
+- `create_user(data)`  
+- `authenticate_user(email, password)`  
+- `get_user_favorites(user_id)`  
 
-* **Frontend**: Static HTML/CSS/JS (with optional framework like React).
-* **Backend API**: Flask REST API for projects, authentication, and messages.
-* **Database**: PostgreSQL (tables for Users, Projects, Messages).
-* **External Service**: Email API (e.g., SendGrid).
+#### **BookService**
+- `search_books(query, filters)`  
+- `get_book_details(book_id)`  
+- `link_external_resources(book_id)`  
 
-### Core Classes
+#### **FavoriteService**
+- `add_to_favorites(user_id, book_id)`  
+- `remove_from_favorites(user_id, book_id)`  
+- `list_favorites(user_id)`  
 
-* **User**: `id`, `username`, `password_hash`, `role`
-* **Project**: `id`, `title`, `description`, `category`, `image_url`, `link`
-* **Message**: `id`, `name`, `email`, `content`, `timestamp`
-
-### Database Schema (ERD)
-
+### 2.2 Database Schema (ERD)
 ```mermaid
 erDiagram
-  USER ||--o{ PROJECT : manages
+  USER ||--o{ FAVORITE : has
   USER {
-    int id PK
-    string username
-    string password_hash
-    string role
-  }
-  PROJECT {
-    int id PK
-    string title
-    string description
-    string category
-    string image_url
-    string link
-  }
-  MESSAGE {
     int id PK
     string name
     string email
-    string content
-    datetime timestamp
+    string password_hash
+    datetime created_at
   }
-```
+  BOOK {
+    int id PK
+    string title
+    string author
+    string description
+    string category
+    string link
+  }
+  FAVORITE {
+    int id PK
+    int user_id FK
+    int book_id FK
+    datetime created_at
+  }
 
----
+## 📝 Task 3: Sequence Diagrams
 
-## 4. High-Level Sequence Diagrams
-
-### Example: Visitor sends a message
-
+### 3.1 Example: User Searches for a Book
 ```mermaid
 sequenceDiagram
-  Visitor->>Frontend: Fill contact form
-  Frontend->>API: POST /api/v1/messages
-  API->>BusinessLogic: validate message
-  BusinessLogic->>DB: INSERT new message
-  DB-->>BusinessLogic: success
-  BusinessLogic->>Ext: Send email notification
-  Ext-->>BusinessLogic: success
-  API-->>Frontend: { "status": "success" }
-  Frontend-->>Visitor: Show confirmation
-```
+  User->>Frontend: Enter search query
+  Frontend->>API: GET /api/v1/books?query=title
+  API->>DB: SELECT books WHERE title LIKE query
+  DB-->>API: Book results
+  API-->>Frontend: JSON {books[]}
+  Frontend-->>User: Display results
 
-### Example: Admin adds a new project
+## 📝 Task 4: API Specifications
 
-```mermaid
-sequenceDiagram
-  Admin->>Frontend: Submit new project form
-  Frontend->>API: POST /api/v1/projects
-  API->>BusinessLogic: validate data
-  BusinessLogic->>DB: INSERT new project
-  DB-->>BusinessLogic: success
-  BusinessLogic-->>API: return created project
-  API-->>Frontend: 201 Created
-  Frontend-->>Admin: Show success message
-```
+### 4.1 Authentication
 
----
+**POST /api/v1/auth/login**  
+- **Input:**  
+```json
+{
+  "email": "user@example.com",
+  "password": "secret"
+}
+Output:
 
-## 5. API Specifications
+{
+  "token": "jwt_token"
+}
 
-### Authentication
+4.2 Books
 
-* **POST** `/api/v1/auth/login`
-  Input: `{ "username": "admin", "password": "secret" }`
-  Output: `{ "token": "jwt_token" }`
+GET /api/v1/books?query=keyword → Search books
 
-### Projects
+GET /api/v1/books/{id} → Get book details
 
-* **GET** `/api/v1/projects` → List all projects
-* **GET** `/api/v1/projects/{id}` → Get project by ID
-* **POST** `/api/v1/projects` (Admin only)
-  Input: `{ "title": "Portfolio", "description": "...", "category": "Web", "image_url": "...", "link": "..." }`
-* **PUT** `/api/v1/projects/{id}` (Admin only)
-* **DELETE** `/api/v1/projects/{id}` (Admin only)
+4.3 Favorites
 
-### Messages
+POST /api/v1/favorites
 
-* **POST** `/api/v1/messages`
-  Input: `{ "name": "Ali", "email": "ali@example.com", "content": "Hello" }`
-  Output: `{ "status": "success", "messageId": 123 }`
+Input:
 
----
+{
+  "book_id": 1
+}
 
-## 6. SCM & QA Strategies
 
-### Source Control (SCM)
+Output:
 
-* Platform: GitHub
-* Branching: `main` (stable) + `feature/*` (new features)
-* Workflow: Pull Requests, mandatory code reviews
-* Protection: No direct commits to `main`
+{
+  "status": "success"
+}
 
-### Quality Assurance (QA)
 
-* **Unit tests** for business logic and API routes (Pytest).
-* **Integration tests** for DB operations and external services.
-* **Static analysis**: Pylint/Flake8 for Python code.
-* **CI/CD**: GitHub Actions pipeline (run tests on each PR).
+GET /api/v1/favorites → List user’s favorites
+
+DELETE /api/v1/favorites/{id} → Remove from favorites
+
 
 ---
 
-## 7. Technical Justifications
+```markdown
+## 📝 Task 5: SCM & QA Strategies
 
-* **Flask** chosen as backend framework: lightweight, flexible, suitable for MVP.
-* **PostgreSQL** as database: relational model fits portfolio data (projects, messages, users).
-* **JWT authentication**: stateless, simple to integrate with frontend.
-* **Email API (SendGrid)**: reliable third-party service for sending notifications.
-* **GitHub + Actions**: seamless integration for SCM and CI/CD.
+### 5.1 Source Control (SCM)
 
----
+- **Platform:** GitHub  
+- **Branching Strategy:**  
+  - `main` → stable branch  
+  - `dev` → integration  
+  - `feature/*` → per feature  
+- **Workflow:** Pull Requests with code reviews, no direct pushes to `main`
 
-## 📦 Deliverable
+### 5.2 Quality Assurance (QA)
 
-This document serves as the **Stage 3: Technical Documentation** for the Portfolio Project. It defines system architecture, database schema, APIs, testing strategy, and justifies technical decisions to guide implementation of the MVP.
+- **Unit Tests:** Pytest for backend logic  
+- **Integration Tests:** API endpoints with Postman  
+- **Frontend Tests:** React Testing Library  
+- **Static Analysis:** Flake8 (Python), ESLint (JS)  
+- **CI/CD:** GitHub Actions (lint + tests on PR)
 
+## 📝 Task 6: Technical Justifications
+
+- **Flask:** Lightweight, easy for rapid API development  
+- **PostgreSQL:** Relational, scalable for production  
+- **JWT Authentication:** Secure and stateless  
+- **React:** Flexible and responsive frontend  
+- **GitHub Actions:** Automated QA and CI/CD pipeline
+
+## 📦 Final Deliverable
+
+This Stage 3 document consolidates:
+
+- Task 0: User Stories & Mockups  
+- Task 1: System Architecture  
+- Task 2: Components, Classes, Database Design  
+- Task 3: Sequence Diagrams  
+- Task 4: API Specifications  
+- Task 5: SCM & QA Strategies  
+- Task 6: Technical Justifications  
+
+It provides a blueprint for MVP development and aligns the team on BookBridge’s technical direction.
