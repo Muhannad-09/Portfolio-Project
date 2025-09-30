@@ -1,11 +1,11 @@
-📖 BookBridge – Stage 3
-📌 Overview
+# 📖 BookBridge – Stage 3
+# 📌 Overview
 
 This stage focuses on the technical documentation for BookBridge, consolidating all design and system planning before implementation.
 
-📂 Deliverables
+# 📂 Deliverables
 
-Stage3.md → Full technical documentation, including:
+# Stage3.md → Full technical documentation, including:
 
 Task 0: User Stories & Mockups
 
@@ -21,7 +21,7 @@ Task 5: SCM & QA Strategies
 
 Task 6: Technical Justifications
 
-🛠 Contents
+# 🛠 Contents
 
 High-level architecture diagrams (Mermaid)
 
@@ -33,7 +33,7 @@ API specifications for authentication, books, and favorites
 
 Source control and QA strategy
 
-📎 Files
+# 📎 Files
 
 README.md (this file)
 
