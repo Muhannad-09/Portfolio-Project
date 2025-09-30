@@ -51,6 +51,7 @@ It defines **user stories, mockups, architecture, database schema, sequence diag
 User → Frontend → Backend API → Database / External APIs → Response → User  
 
 ### Architecture Diagram
+```
 graph TD
   User[User] -->|Browser| Frontend[Frontend (React)]
   Frontend --> API[Backend API (Flask)]
@@ -58,7 +59,7 @@ graph TD
   BL --> DB[(Database: PostgreSQL)]
   API --> Ext[External Services: Book APIs, Email API]
 ```
-```
+
 ## 📝 Task 2: Components, Classes, and Database Design
 
 ### 2.1 Components / Services
