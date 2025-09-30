@@ -38,3 +38,10 @@ Source control and QA strategy
 README.md (this file)
 
 Stage3.md (detailed documentation)
+
+User → Frontend: Submit credentials
+Frontend → Backend: POST /login
+Backend → Database: SELECT user WHERE email/password
+Database → Backend: return user
+Backend → Frontend: return JWT token
+Frontend → User: User logged in
