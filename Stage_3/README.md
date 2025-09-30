@@ -38,3 +38,10 @@ Source control and QA strategy
 README.md (this file)
 
 Stage3.md (detailed documentation)
+
+graph TD
+  User[User] -->|Browser| Frontend[Frontend (React)]
+  Frontend --> API[Backend API (Flask)]
+  API --> BL[Business Logic Layer]
+  BL --> DB[(Database: PostgreSQL)]
+  API --> Ext[External Services: Book APIs, Email API]
