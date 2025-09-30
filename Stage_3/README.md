@@ -38,3 +38,13 @@ Source control and QA strategy
 README.md (this file)
 
 Stage3.md (detailed documentation)
+
+flowchart LR
+    student["Student (Web)"] --> fe["Frontend - React"]
+    fe -->|REST| be["Backend - Django (DRF)"]
+    be -->|CRUD & Queries| db[("MongoDB")]
+    be -->|Search/Rank| vs["Rasa / Vector Store - optional"]
+    be -->|Events/AI optional| ext["External APIs - Calendar, OpenAI"]
+    be --> fe
+    fe --> student
+
