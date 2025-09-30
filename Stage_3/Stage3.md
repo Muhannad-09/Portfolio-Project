@@ -23,10 +23,10 @@
 
 ### Mockups
 
-# BookBridge Home Page
+# **BookBridge Home Page**
 <img width="2560" height="3252" alt="screen" src="https://github.com/user-attachments/assets/571c4e41-76ee-478a-9505-b67dcc2a4ed7" />
  
-# Admin dashboard
+# **Admin dashboard**
 <img width="2560" height="1600" alt="screen" src="https://github.com/user-attachments/assets/85f87728-3459-44d9-88a7-bf5d554adf83" />
 
 
