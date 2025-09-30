@@ -165,20 +165,19 @@ POST /api/v1/favorites
 }
 
 
-Output:
+# Output:
 
 {
   "status": "success"
 }
-
+```
 
 GET /api/v1/favorites → List user’s favorites
 
 DELETE /api/v1/favorites/{id} → Remove from favorites
 
-
 ---
-
+```
 
 ## 📝 Task 5: SCM & QA Strategies
 
