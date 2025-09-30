@@ -107,7 +107,6 @@ graph TD
 
 ### 3.1 Example: User Searches for a Book
 ```
-sequenceDiagram
   User->>Frontend: Enter search query
   Frontend->>API: GET /api/v1/books?query=title
   API->>DB: SELECT books WHERE title LIKE query
@@ -116,14 +115,13 @@ sequenceDiagram
   Frontend-->>User: Display results
 ```
 ### 3.2 Example: User Adds Book to Favorites
-sequenceDiagram
+```
   User->>Frontend: Click "Add to Favorites"
   Frontend->>API: POST /api/v1/favorites
   API->>DB: INSERT INTO favorites
   DB-->>API: success
   API-->>Frontend: {status: success}
   Frontend-->>User: Show confirmation
-```
 ```
 
 ### 📝 Task 4: API Specifications
