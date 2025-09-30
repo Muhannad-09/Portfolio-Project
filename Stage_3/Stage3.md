@@ -1,3 +1,5 @@
+## 📄 Stage 3 – Technical Documentation
+
 ## 1. User Stories & Mockups
 
 ### User Stories (prioritized with MoSCoW)
