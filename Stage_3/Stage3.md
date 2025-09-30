@@ -51,7 +51,7 @@ It defines **user stories, mockups, architecture, database schema, sequence diag
 User → Frontend → Backend API → Database / External APIs → Response → User  
 
 ### Architecture Diagram
-```mermaid
+```
 graph TD
   User[User] -->|Browser| Frontend[Frontend (React)]
   Frontend --> API[Backend API (Flask)]
@@ -79,7 +79,7 @@ graph TD
 - `list_favorites(user_id)`  
 
 ### 2.2 Database Schema (ERD)
-```mermaid
+```
 erDiagram
   USER ||--o{ FAVORITE : has
   USER {
