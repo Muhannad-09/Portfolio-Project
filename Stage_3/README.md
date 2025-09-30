@@ -38,3 +38,12 @@ Source control and QA strategy
 README.md (this file)
 
 Stage3.md (detailed documentation)
+
+
+sequenceDiagram
+  User->>Frontend: Enter search query
+  Frontend->>API: GET /api/v1/books?query=title
+  API->>DB: SELECT books WHERE title LIKE query
+  DB-->>API: Book results
+  API-->>Frontend: JSON {books[]}
+  Frontend-->>User: Display results
