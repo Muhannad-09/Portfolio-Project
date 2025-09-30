@@ -38,3 +38,14 @@ Source control and QA strategy
 README.md (this file)
 
 Stage3.md (detailed documentation)
+
+
++----------------+       HTTPS        +----------------+       SQLAlchemy       +------------------+
+|   Front-End    | <----------------> |    Back-End    | <-------------------> |     Database      |
+| (HTML/CSS/JS)  |   API requests     |  (Flask + JWT) |   ORM + Queries      | (SQLite → Postgres|
++----------------+                    +----------------+                       +------------------+
+
+                              +------------------+
+                              |  External APIs   |
+                              | (Future: Maps)   |
+                              +------------------+
