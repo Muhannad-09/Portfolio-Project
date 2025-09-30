@@ -1,30 +1,40 @@
-# Portfolio Project
+📖 BookBridge – Stage 3
+📌 Overview
 
-## Project Overview
-This project is a personal portfolio website to showcase projects, skills, and provide a contact form for potential clients or employers. The website includes both a visitor-facing frontend and an admin backend for managing content.
+This stage focuses on the technical documentation for BookBridge, consolidating all design and system planning before implementation.
 
-## Features
-- Browse projects with details (title, description, category, images, external links).  
-- Admin dashboard for CRUD operations on projects.  
-- Contact form for visitors to send messages to the developer.  
-- Secure admin login with JWT authentication.  
-- Optional project filtering and CV download.  
+📂 Deliverables
 
-## Stage 3: Technical Documentation
-For detailed system architecture, user stories, mockups, database schema, API specifications, and QA strategies, see [Stage3.md](Stage_3/Stage3.md).
+Stage3.md → Full technical documentation, including:
 
-## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript (optionally React)  
-- **Backend:** Flask REST API  
-- **Database:** PostgreSQL  
-- **Authentication:** JWT  
-- **External Services:** Email API (e.g., SendGrid)  
-- **Version Control:** Git + GitHub  
+Task 0: User Stories & Mockups
 
-## Getting Started
+Task 1: System Architecture
 
-### Prerequisites
-- Python 3.x  
-- PostgreSQL  
-- Git  
+Task 2: Components, Classes, Database Design
 
+Task 3: Sequence Diagrams
+
+Task 4: API Specifications
+
+Task 5: SCM & QA Strategies
+
+Task 6: Technical Justifications
+
+🛠 Contents
+
+High-level architecture diagrams (Mermaid)
+
+Database schema (ERD)
+
+User stories and wireframes
+
+API specifications for authentication, books, and favorites
+
+Source control and QA strategy
+
+📎 Files
+
+README.md (this file)
+
+Stage3.md (detailed documentation)
