@@ -135,23 +135,20 @@ graph TD
   "email": "user@example.com",
   "password": "secret"
 }
-
-
-ical Justifications
 ```
 
 # Output:
-
+```
 {
   "token": "jwt_token"
 }
-
+```
 # 4.2 Books
-
+```
 GET /api/v1/books?query=keyword → Search books
 
 GET /api/v1/books/{id} → Get book details
-
+```
 # 4.3 Favorites
 
 POST /api/v1/favorites
@@ -164,17 +161,15 @@ POST /api/v1/favorites
 
 
 # Output:
-
+```
 {
   "status": "success"
 }
 ```
-
+```
 GET /api/v1/favorites → List user’s favorites
 
 DELETE /api/v1/favorites/{id} → Remove from favorites
-
----
 ```
 
 ## 📝 Task 5: SCM & QA Strategies
