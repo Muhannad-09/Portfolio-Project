@@ -51,7 +51,7 @@ It defines **user stories, mockups, architecture, database schema, sequence diag
 User → Frontend → Backend API → Database / External APIs → Response → User  
 
 ### Architecture Diagram
-```
+```mermaid
 graph TD
   User[User] -->|Browser| Frontend[Frontend (React)]
   Frontend --> API[Backend API (Flask)]
@@ -59,6 +59,8 @@ graph TD
   BL --> DB[(Database: PostgreSQL)]
   API --> Ext[External Services: Book APIs, Email API]
 ```
+
+---
 
 ## 📝 Task 2: Components, Classes, and Database Design
 
@@ -80,7 +82,8 @@ graph TD
 - `list_favorites(user_id)`  
 
 ### 2.2 Database Schema (ERD)
-```
+```mermaid
+erDiagram
   USER ||--o{ FAVORITE : has
   USER {
     int id PK
@@ -104,10 +107,14 @@ graph TD
     datetime created_at
   }
 ```
+
+---
+
 ## 📝 Task 3: Sequence Diagrams
 
 ### 3.1 Example: User Searches for a Book
-```
+```mermaid
+sequenceDiagram
   User->>Frontend: Enter search query
   Frontend->>API: GET /api/v1/books?query=title
   API->>DB: SELECT books WHERE title LIKE query
@@ -115,8 +122,10 @@ graph TD
   API-->>Frontend: JSON {books[]}
   Frontend-->>User: Display results
 ```
+
 ### 3.2 Example: User Adds Book to Favorites
-```
+```mermaid
+sequenceDiagram
   User->>Frontend: Click "Add to Favorites"
   Frontend->>API: POST /api/v1/favorites
   API->>DB: INSERT INTO favorites
@@ -125,91 +134,68 @@ graph TD
   Frontend-->>User: Show confirmation
 ```
 
-### 📝 Task 4: API Specifications
+---
 
-### 4.1 Authentication
+## 📝 Task 4: API Specifications
 
+### Authentication
 **POST /api/v1/auth/login**  
-- **Input:**  
-```json
-{
-  "email": "user@example.com",
-  "password": "secret"
-}
-```
+- Input: `{ "email": "user@example.com", "password": "secret" }`  
+- Output: `{ "token": "jwt_token" }`  
 
-# Output:
-```
-{
-  "token": "jwt_token"
-}
-```
-# 4.2 Books
-```
-GET /api/v1/books?query=keyword → Search books
+### Books
+- **GET /api/v1/books?query=keyword** → Search books  
+- **GET /api/v1/books/{id}** → Get book details  
 
-GET /api/v1/books/{id} → Get book details
-```
-# 4.3 Favorites
+### Favorites
+- **POST /api/v1/favorites**  
+  - Input: `{ "book_id": 1 }`  
+  - Output: `{ "status": "success" }`  
 
-POST /api/v1/favorites
+- **GET /api/v1/favorites** → List user’s favorites  
 
-# Input:
+- **DELETE /api/v1/favorites/{id}** → Remove from favorites  
 
-{
-  "book_id": 1
-}
-
-
-# Output:
-```
-{
-  "status": "success"
-}
-```
-```
-GET /api/v1/favorites → List user’s favorites
-
-DELETE /api/v1/favorites/{id} → Remove from favorites
-```
+---
 
 ## 📝 Task 5: SCM & QA Strategies
 
-### 5.1 Source Control (SCM)
-
-- **Platform:** GitHub  
-- **Branching Strategy:**  
+### Source Control (SCM)
+- **Platform**: GitHub  
+- **Branching Strategy**:  
   - `main` → stable branch  
-  - `dev` → integration  
+  - `dev` → integration branch  
   - `feature/*` → per feature  
-- **Workflow:** Pull Requests with code reviews, no direct pushes to `main`
+- **Workflow**: Pull Requests with code reviews, no direct pushes to `main`  
 
-### 5.2 Quality Assurance (QA)
+### Quality Assurance (QA)
+- **Unit Tests**: Pytest for backend logic  
+- **Integration Tests**: API endpoints with Postman  
+- **Frontend Tests**: React Testing Library  
+- **Static Analysis**: Flake8 (Python), ESLint (JS)  
+- **CI/CD**: GitHub Actions (lint + tests on PR)  
 
-- **Unit Tests:** Pytest for backend logic  
-- **Integration Tests:** API endpoints with Postman  
-- **Frontend Tests:** React Testing Library  
-- **Static Analysis:** Flake8 (Python), ESLint (JS)  
-- **CI/CD:** GitHub Actions (lint + tests on PR)
+---
 
 ## 📝 Task 6: Technical Justifications
 
-- **Flask:** Lightweight, easy for rapid API development  
-- **PostgreSQL:** Relational, scalable for production  
-- **JWT Authentication:** Secure and stateless  
-- **React:** Flexible and responsive frontend  
-- **GitHub Actions:** Automated QA and CI/CD pipeline
+- **Flask**: Lightweight, easy for rapid API development  
+- **PostgreSQL**: Relational, scalable for production  
+- **JWT Authentication**: Secure and stateless  
+- **React**: Flexible and responsive frontend  
+- **GitHub Actions**: Automated QA and CI/CD pipeline  
+
+---
 
 ## 📦 Final Deliverable
 
-This Stage 3 document consolidates:
-
+This Stage 3 document consolidates:  
 - **Task 0**: User Stories & Mockups  
 - **Task 1**: System Architecture  
 - **Task 2**: Components, Classes, Database Design  
 - **Task 3**: Sequence Diagrams  
 - **Task 4**: API Specifications  
 - **Task 5**: SCM & QA Strategies  
-- **Task 6**: Technical Justifications technical direction.
+- **Task 6**: Technical Justifications  
 
-It provides a blueprint for MVP development and aligns the team on BookBridge’s 
+It provides a blueprint for MVP development and aligns the team on **BookBridge’s technical direction**.  
