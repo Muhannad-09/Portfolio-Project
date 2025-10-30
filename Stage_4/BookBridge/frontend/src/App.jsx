@@ -1,14 +1,16 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import BookCard from './components/BookCard'
+import FavoriteList from './components/FavoriteList'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import SearchBooks from './pages/SearchBooks'
 import Favorites from './pages/Favorites'
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<SearchBooks />} />
@@ -16,7 +18,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
-    </div>
+    </Router>
   )
 }
 
