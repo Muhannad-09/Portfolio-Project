@@ -83,27 +83,24 @@ BookBridge follows a **client–server architecture**:
 
 BookBridge/
 ├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── models.py
-│   │   ├── routes/
-│   │   │   ├── auth.py
-│   │   │   ├── books.py
-│   │   │   └── reviews.py
-│   │   ├── schemas.py
-│   │   ├── utils.py
-│   ├── requirements.txt
-│   └── run.py
+│ ├── app/
+│ │ ├── init.py # App factory
+│ │ ├── models.py # Database models
+│ │ ├── routes/ # API endpoints
+│ │ ├── schemas.py # JSON serialization
+│ │ ├── utils.py # Role-based helpers
+│ ├── requirements.txt
+│ └── run.py
 │
 └── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   ├── services/
-    │   ├── styles/
-    │   └── App.jsx
-    ├── package.json
-    └── vite.config.js
+├── src/
+│ ├── components/ # Navbar, BookCard, etc.
+│ ├── pages/ # Login, Register, Favorites
+│ ├── services/ # Axios API services
+│ ├── styles/ # CSS files
+│ └── App.jsx # Main app routing
+├── package.json
+└── vite.config.js
 
 ---
 
