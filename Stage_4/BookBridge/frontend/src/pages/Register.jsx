@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { registerUser } from '../services/auth'
+import './Register.css'
 
 const Register = () => {
-  const [form, setForm] = useState({ name: '', email: '', password: '' })
+  const [form, setForm] = useState({ username: '', password: '' })
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -10,18 +12,39 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await registerUser(form)
+    setLoading(true)
+    try {
+      await registerUser(form)
+    } catch (error) {
+      alert('Registration failed. Try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <div className="form-container">
-      <h2>Create Account</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} required />
-        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
-      </form>
+    <div className="register-page">
+      <div className="register-card">
+        <h2>Create Your Account</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="username"
+            placeholder="Username"
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? 'Registering...' : 'Register'}
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

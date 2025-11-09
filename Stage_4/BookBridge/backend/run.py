@@ -1,11 +1,10 @@
-from flask import Flask
+# run.py
+from app import create_app  # create_app returns a Flask app configured
+import os
 
-app = Flask(__name__)
+app = create_app()
 
-@app.route('/')
-def index():
-    return {'message': 'BookBridge Backend is running!'}
-
-if __name__ == '__main__':
-    # Listen on all interfaces so it's accessible outside the container
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == "__main__":
+    host = os.environ.get("FLASK_HOST", "0.0.0.0")
+    port = int(os.environ.get("FLASK_PORT", 5000))
+    app.run(host=host, port=port, debug=True)
