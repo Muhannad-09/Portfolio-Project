@@ -79,28 +79,40 @@ BookBridge follows a **client–server architecture**:
 
 ---
 
-## 🧩Project Structure
+## 🧩 Project Structure
 
-BookBridge/
-├── backend/
-│ ├── app/
-│ │ ├── init.py # App factory
-│ │ ├── models.py # Database models
-│ │ ├── routes/ # API endpoints
-│ │ ├── schemas.py # JSON serialization
-│ │ ├── utils.py # Role-based helpers
-│ ├── requirements.txt
-│ └── run.py
-│
-└── frontend/
-├── src/
-│ ├── components/ # Navbar, BookCard, etc.
-│ ├── pages/ # Login, Register, Favorites
-│ ├── services/ # Axios API services
-│ ├── styles/ # CSS files
-│ └── App.jsx # Main app routing
-├── package.json
-└── vite.config.js
+### 📂 Backend (`/backend`)
+Handles all **API logic, authentication, and database management**.
+
+**Key files:**
+- `app/__init__.py` → Flask app factory  
+- `app/models.py` → Database models (User, Book, Review)  
+- `app/routes/` → REST API endpoints (auth, books, reviews)  
+- `app/schemas.py` → JSON serializers for models  
+- `app/utils.py` → Role-based access helpers  
+- `requirements.txt` → Backend dependencies  
+- `run.py` → Entry point for running the Flask server  
+
+---
+
+### 💻 Frontend (`/frontend`)
+Handles all **user interface and client-side logic**, built with React + Vite.
+
+**Key files:**
+- `src/components/` → Reusable UI components (Navbar, BookCard, etc.)  
+- `src/pages/` → Page views (Login, Register, Favorites, SearchBooks)  
+- `src/services/` → API communication using Axios  
+- `src/styles/` → CSS files for styling  
+- `src/App.jsx` → Main application routes  
+- `package.json` → Frontend dependencies  
+- `vite.config.js` → Vite configuration file  
+
+---
+
+### 🧠 Summary
+- **Backend:** Python (Flask) + SQLAlchemy + JWT  
+- **Frontend:** React (Vite) + Axios + React Router  
+- **Architecture:** RESTful API + Client-Server Communication  
 
 ---
 
