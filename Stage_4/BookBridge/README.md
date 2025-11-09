@@ -127,8 +127,7 @@ Handles all **user interface and client-side logic**, built with React + Vite.
 
 ## 👨‍💻 Author
 
-**Developed by:** *Muhannad Gsgs* 
-**Program:** Holberton School – Portfolio Project (Stage 4)  
+**Developed by:** *Muhannad Gsgs*   
 **Focus:** Full-Stack Software Engineering  
 
 ---
