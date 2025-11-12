@@ -36,21 +36,23 @@ flask run
 # Frontend
 cd frontend
 npm run dev
-
+```
+---
 Then visit:
-👉 http://127.0.0.1:5173/
+## 👉 http://127.0.0.1:5173/
 
-🧪 QA and Testing Summary
 
-All API endpoints tested with pytest:
+## 🧪 QA and Testing Summary
+
+```All API endpoints tested with pytest:
 tests/test_books.py::test_list_books PASSED
 tests/test_endpoints.py::test_health_books PASSED
 tests/test_endpoints.py::test_register_and_login PASSED
+```
+## ✅ Backend stable — verified endpoints, authentication, and database integrity.
 
-✅ Backend stable — verified endpoints, authentication, and database integrity.
+## 👥 Author
 
-👥 Author
-
-Muhannad Gsgs
+## Muhannad Gsgs
 Software Engineering Student – Holberton School
 📅 2025
