@@ -38,9 +38,6 @@ cd frontend
 npm run dev
 ```
 ---
-Then visit:
-## 👉 http://127.0.0.1:5173/
-
 
 ## 🧪 QA and Testing Summary
 
@@ -49,10 +46,10 @@ tests/test_books.py::test_list_books PASSED
 tests/test_endpoints.py::test_health_books PASSED
 tests/test_endpoints.py::test_register_and_login PASSED
 ```
-## ✅ Backend stable — verified endpoints, authentication, and database integrity.
+## ✅ Backend stable verified endpoints, authentication, and database integrity.
 
 ## 👥 Author
 
-## Muhannad Gsgs
-Software Engineering Student – Holberton School
-📅 2025
+**Developed by:** *Muhannad Gsgs*
+***Software Engineering
+📅 2025*** 
