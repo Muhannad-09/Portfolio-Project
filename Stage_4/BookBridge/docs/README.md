@@ -50,6 +50,6 @@ tests/test_endpoints.py::test_register_and_login PASSED
 
 ## 👥 Author
 
-**Developed by:** *Muhannad Gsgs*
+**Developed by:** ***Muhannad Gsgs***
 ***Software Engineering
 📅 2025*** 
