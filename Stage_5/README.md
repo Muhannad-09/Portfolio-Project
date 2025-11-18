@@ -37,25 +37,6 @@ BookBridge allows users to search books, view details, manage favorites, and add
 
 ---
 
-## 📁 Project Structure
-
-Portfolio-Project/
-│── backend/
-│ ├── app/
-│ ├── models/
-│ ├── routes/
-│ ├── tests/
-│ └── bookbridge.db
-│
-└── frontend/
-├── src/
-├── components/
-├── pages/
-└── services/
-
-
----
-
 ## 🧪 Testing
 Backend tests executed with `pytest`:
 
