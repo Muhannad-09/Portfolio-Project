@@ -1,4 +1,4 @@
-# 📘 BookBridge – Landing Page
+# 📘 BookBridge Landing Page
 
 Welcome to the official **Landing Page** for **BookBridge**, a full-stack book discovery platform built with Flask (backend) and React (frontend).  
 This landing page introduces the project, highlights its features, and provides links to the deployed MVP and source code.
