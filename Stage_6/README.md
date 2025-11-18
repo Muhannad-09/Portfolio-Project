@@ -7,7 +7,7 @@ This landing page introduces the project, highlights its features, and provides 
 
 # 📌 What Is BookBridge?
 
-BookBridge helps readers search books, explore details, save favorites, and read/write reviews — all through a clean, fast, and easy-to-use interface.
+BookBridge helps readers search books, explore details, save favorites, and read/write reviews all through a clean, fast, and easy-to-use interface.
 
 This landing page is designed to:
 
@@ -17,29 +17,19 @@ This landing page is designed to:
 
 ---
 
-# 🖼️ 1. Intro Section (Hero)
-
-Your landing page includes:
-
-- A large cover/banner image  
-- Project name: **BookBridge**  
-- Tagline: **"Find the right book. Discover your next insight."**  
-- Navigation bar (Home, Features, About, App)  
-- A CTA button linking to the deployed app  
+# 🖼️Intro Section (Hero)
 
 ---
 
-# ⭐ 2. Feature Section
+# ⭐ 1. Feature Section
 
-The landing page highlights **3 core features**:
-
-### 🔎 Feature 1 — Smart Book Search  
+### 🔎 Feature 1 Smart Book Search  
 Search by title, author, or category.
 
-### ⭐ Feature 2 — Favorites Library  
+### ⭐ Feature 2 Favorites Library  
 Save and organize your favorite books.
 
-### 📚 Feature 3 — Book Details & Reviews  
+### 📚 Feature 3 Book Details & Reviews  
 See full details and explore user reviews.
 
 ---

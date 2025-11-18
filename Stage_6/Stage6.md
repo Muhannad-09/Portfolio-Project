@@ -1,7 +1,7 @@
-# 📘 Stage 6 – Landing Page Deliverable  
+# 📘 Stage 6 Landing Page Deliverable  
 **Project:** BookBridge  
 **Student:** Muhannad Ali Alghamdi  
-**Program:** Holberton School – Portfolio Project  
+**Program:** Holberton School Portfolio Project  
 
 ---
 
@@ -30,7 +30,7 @@ The landing page highlights the **three main features** of BookBridge:
 # 2. About Section
 
 ### 📘 Project Inspiration  
-The BookBridge project was inspired by my passion for reading and the desire to create a simple, powerful tool for discovering meaningful books. I have always valued reading as a way to learn, improve, and gain new perspectives — but finding reliable, organized information can be difficult. BookBridge solves this problem by providing a clean and accessible experience for exploring books.
+The BookBridge project was inspired by my passion for reading and the desire to create a simple, powerful tool for discovering meaningful books. I have always valued reading as a way to learn, improve, and gain new perspectives but finding reliable, organized information can be difficult. BookBridge solves this problem by providing a clean and accessible experience for exploring books.
 
 This project also serves as my **Holberton School Portfolio Project**, developed as part of the full-stack curriculum.
 
