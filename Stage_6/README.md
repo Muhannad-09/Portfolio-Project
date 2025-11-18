@@ -17,10 +17,6 @@ This landing page is designed to:
 
 ---
 
-# 🖼️Intro Section (Hero)
-
----
-
 # ⭐ 1. Feature Section
 
 ### 🔎 Feature 1 Smart Book Search  
